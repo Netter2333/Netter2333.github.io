@@ -1,5 +1,5 @@
 let myHeading = document.querySelector('h1');
-myHeading.textContent = 'Pacman Fan Website';
+myHeading.textContent = 'PACMAN Fan Website';
 
 alert('Welcome to my first website!'); // alerta de bienvenida al cargar el sitio.
 
@@ -23,7 +23,7 @@ function setUserName() {
 		setUserName();
 	} else {
 		localStorage.setItem('name', myName);
-		myHeading.innerHTML = 'Pacman is cool, ' + myName;
+		myHeading.innerHTML = 'PACMAN is cool, ' + myName;
 	}
 }
 
@@ -31,7 +31,7 @@ if (!localStorage.getItem('name')) {
 	setUserName();
 } else {
 	let storedName = localStorage.getItem('name');
-	myHeading.innerHTML = 'Pacman is cool, ' + storedName;
+	myHeading.innerHTML = 'PACMAN is cool, ' + storedName;
 }
 
 myButton.onclick = function () {
