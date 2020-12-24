@@ -37,3 +37,36 @@ if (!localStorage.getItem('name')) {
 myButton.onclick = function () {
 	setUserName();
 };
+
+const list = document.createElement('ul');
+list.setAttribute('id', 'Ul2');
+const info = document.createElement('p');
+const html = document.querySelector('html');
+const listquery = document.querySelector('#Ul2');
+
+info.textContent =
+	'Below is a dynamic list. Click the list above to add a new list item. Click an existing list item to change its text to something else.';
+
+document.body.appendChild(info);
+document.body.appendChild(list);
+
+listquery.onclick = function () {
+	const listItem = document.createElement('li');
+	const listContent = prompt('What do you like about PACMAN?');
+	if (!listContent) {
+		alert('Invalid input');
+	} else {
+		listItem.textContent = listContent;
+		list.appendChild(listItem);
+
+		listItem.onclick = function (e) {
+			e.stopPropagation();
+			const listContent = prompt('Enter new content for your list item');
+			if (!listContent) {
+				alert('Invalid input');
+			} else {
+				this.textContent = listContent;
+			}
+		};
+	}
+};
