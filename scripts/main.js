@@ -42,15 +42,14 @@ const list = document.createElement('ul');
 list.setAttribute('id', 'Ul2');
 const info = document.createElement('p');
 const html = document.querySelector('html');
-const listquery = document.querySelector('#Ul2');
 
 info.textContent =
-	'Below is a dynamic list. Click the list above to add a new list item. Click an existing list item to change its text to something else.';
+	'Below is a dynamic list. Click the list below to add a new list item. Click an existing list item to change its text to something else.';
 
 document.body.appendChild(info);
 document.body.appendChild(list);
 
-listquery.onclick = function () {
+list.onclick = function () {
 	const listItem = document.createElement('li');
 	const listContent = prompt('What do you like about PACMAN?');
 	if (!listContent) {
